@@ -4,6 +4,7 @@ body{
 
 .qbox{
       display: flex;
+      flex-direction: column;
       background-color: aqua;
       width: 830px;
       height: 280px;
