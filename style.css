@@ -3,8 +3,33 @@ body{
 }
 
 .qbox{
+      display: flex;
       background-color: aqua;
       width: 830px;
       height: 280px;
       border-radius: 20px;
+      padding: 10px;
+}
+
+.sclbox{
+      display: flex;
+      flex-direction: column;
+      justify-content: right;
+      align-items: flex-end;
+      margin: 50px 50px  50px 0px ;
+      
+}
+
+.level{
+      margin: 30px 0 0 0;
+}
+
+.picbox{
+      display: flex;
+      flex-direction: row;
+      background-color: beige;
+}
+
+.img{
+
 }
