@@ -1,7 +1,8 @@
 // Create variables and get them by their id for DOM manipulation
 
-let question  = document.querySelector("#question")
+let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
+
 // Create an array of questions and answers
 const questions = [
       {question:"Which was the First Air Jordan to debut?",
@@ -12,7 +13,7 @@ const questions = [
             d: "Air Jordan 1 Chicago"
       },
 correctAnswer: "a"
-}
+},
       {question:"Which Jordan sneaker was banned in the NBA?",
       answers:{
             a: "Air Jordan 1 BANNED",
@@ -21,22 +22,53 @@ correctAnswer: "a"
             d: "Air Jordan 1 Chicago"
       },
 correctAnswer: "b"
-}
+},
 
-let images = document.querySelector("#imgbox")
-question.innerHTML = "Which was the first Air Jordan to Debut"
-questnumb.innerHTML = "Question 1"
+
+      {question:"Which Jordans did Michael Jordan wear in his famous Flu Game ?",
+      answers:{
+            a: "Air Jordan 1 BANNED",
+            b: "Air Jordan 1 Chicago",
+            c: "Air Jordan 12 ",
+            d: "Air Jordan 1 UNC"
+      },
+correctAnswer: "c"
+},
+      {question:"Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
+      answers:{
+            a: "Air Jordan 1 BANNED",
+            b: "Air Jordan 11 All Black",
+            c: "Air Jordan 10 OVO",
+            d: "Air Jordan 1 Chicago"
+      },
+correctAnswer: "c"
+},
+      {question:"Which of these Jordan currently have the highest retail price sneaker was banned in the NBA?",
+      answers:{
+            a: "Air Jordan 1 BANNED",
+            b: "Air Jordan 1 Chicago",
+            c: "Air Jordan 1 x J Balvin ",
+            d: "Air Jordan 1 Dior"
+      },
+correctAnswer: "b"
+}
+]
+
+//Create a function to show the quesiton
+
+
+
 
 // for (i = 0; questions.length;i++){
 
 // }
 
-images.addEventListener("click",function(){
+// images.addEventListener("click",function(){
 
-      for( i = 0; questions.length;i++){
-            if
-      }
-})
+//       for( i = 0; questions.length;i++){
+//             if
+//       }
+// })
 
 
 
@@ -51,6 +83,7 @@ images.addEventListener("click",function(){
 
 
 // Have the questions and the answers in an array
+// We need a function to display the question and the answers
 // Put each answer under the pictures so the Javascript can keep track of them
 // Add an event listener on click to proceed to the next question
 // Need to create a function to proceed to the next question 
