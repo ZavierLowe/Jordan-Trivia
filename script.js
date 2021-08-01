@@ -2,7 +2,7 @@
 
 let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
-
+let questAns = document.querySelectorAll('#imgbox')
 // Create an array of questions and answers
 const questions = [
       {question:"Which was the First Air Jordan to debut?",
@@ -54,10 +54,30 @@ correctAnswer: "b"
 }
 ]
 
-//Create a function to show the quesiton
+//Create a function to show the quesitons
 
+// function showQuestion( questions,quizBox){
 
+//       let output = [];
+//       let answers; 
+      
+//       for (let i = 0; i <questions.length; i++){
+//             answers = [ ];
+//       }
+//       for( letter in questions[i].answers){
 
+//       }
+
+// }
+
+// Function to create the quiz and change the inner HTML to show the questions
+
+function startQuiz(){
+      currentQuestion = 0;
+      questionName.innerHTML = questions[currentQuestion].question;
+}
+
+startQuiz()
 
 // for (i = 0; questions.length;i++){
 
