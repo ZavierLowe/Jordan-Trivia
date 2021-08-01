@@ -4,55 +4,52 @@ let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
 let questAns = document.querySelectorAll('#imgbox')
 // Create an array of questions and answers
+
 const questions = [
       {question:"Which was the First Air Jordan to debut?",
-      answers:{
-            a: "Air Jordan 1 Chicago",
-            b: "Air Jordan 1 BANNED",
-            c: "Air Jordan 1 Chicago",
-            d: "Air Jordan 1 Chicago"
-      },
-correctAnswer: "a"
-},
-      {question:"Which Jordan sneaker was banned in the NBA?",
-      answers:{
-            a: "Air Jordan 1 BANNED",
-            b: "Air Jordan 1 Chicago",
-            c: "Air Jordan 1 UNC",
-            d: "Air Jordan 1 Chicago"
-      },
-correctAnswer: "b"
-},
-
-
-      {question:"Which Jordans did Michael Jordan wear in his famous Flu Game ?",
-      answers:{
-            a: "Air Jordan 1 BANNED",
-            b: "Air Jordan 1 Chicago",
-            c: "Air Jordan 12 ",
-            d: "Air Jordan 1 UNC"
-      },
-correctAnswer: "c"
-},
-      {question:"Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
-      answers:{
-            a: "Air Jordan 1 BANNED",
-            b: "Air Jordan 11 All Black",
-            c: "Air Jordan 10 OVO",
-            d: "Air Jordan 1 Chicago"
-      },
-correctAnswer: "c"
-},
-      {question:"Which of these Jordan currently have the highest retail price sneaker was banned in the NBA?",
-      answers:{
-            a: "Air Jordan 1 BANNED",
-            b: "Air Jordan 1 Chicago",
-            c: "Air Jordan 1 x J Balvin ",
-            d: "Air Jordan 1 Dior"
-      },
-correctAnswer: "b"
-}
+      answers: [
+            {text: "Air Jordan 1 Chicago", correct : true},
+            {text: "Air Jordan 1 BANNED", correct : false},
+            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 BANNED", correct : false},]},
+      
+            {question:"Which Jordan sneaker was banned in the NBA?",
+      answers: [
+            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 BANNED", correct : true},
+            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 BANNED", correct : false},]},
+            
+            {question:"Which Jordan sneaker did MIchael Jordan wear in his famous FLU GAME?",
+      answers: [
+            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 BANNED", correct : false},
+            {text: "Air Jordan 12 Chicago", correct : true},
+            {text: "Air Jordan 1 BANNED", correct : false},]},
+          
+            {question:"Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
+      answers: [
+            {text: "Air Jordan 1 BANNED", correct : false},
+            {text: "Air Jordan 1 BANNED", correct : false},
+            {text: "Air Jordan 10 ", correct : true},
+            {text: "Air Jordan 1 Chicago", correct : false},]},
+            
+            {question:"Which of these Jordan currently have the highest retail price ?",
+      answers: [
+            {text: "Air Jordan 1 BANNED", correct : false},
+            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 x J.Balvin ", correct : true},
+            {text: "Air Jordan 1 Dior", correct : false},]},
+          
 ]
+      
+      
+
+
+
+
+
+
 
 //Create a function to show the quesitons
 
@@ -70,14 +67,15 @@ correctAnswer: "b"
 
 // }
 
-// Function to create the quiz and change the inner HTML to show the questions
+// Function to create the trivia game and change the inner HTML to show the questions
 
-function startQuiz(){
+function startTrivia(){
       currentQuestion = 0;
       questionName.innerHTML = questions[currentQuestion].question;
+      questAns.innerHTML = questions[currentQuestion].answers[0].option;
 }
 
-startQuiz()
+startTrivia()
 
 // for (i = 0; questions.length;i++){
 
