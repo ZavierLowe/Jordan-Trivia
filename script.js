@@ -9,124 +9,116 @@ let btnAns1 = document.querySelector(".btn")
 let btnAns2= document.querySelector(".btn2")
 let btnAns3 = document.querySelector(".btn3")
 let btnAns4 = document.querySelector(".btn4")
-let currentQuestionIndex
-let button
+
 // Create an array of questions and answers
 
-const questions = [
+let questions = [
       {question:"Which was the First Air Jordan to debut?",
       answers: [
-            {text: "Air Jordan 1 Chicago", correct : true},
-            {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 1 Black", correct : false},
-            {text: "Air Jordan 1 UNC", correct : false},]},
+            "Air Jordan 1 Chicago",
+            "Air Jordan 1 BANNED", 
+            "Air Jordan 1 Black", 
+            "Air Jordan 1 UNC",
+      ],
+      correctAns: "Air Jordan 1 Chicago"
+      },
       
             {question:"Which Jordan sneaker was banned in the NBA?",
       answers: [
-            {text: "Air Jordan 1 Bred", correct : false},
-            {text: "Air Jordan 1 BANNED", correct : true},
-            {text: "Air Jordan 4 Chicago", correct : false},
-            {text: "Air Jordan 12 BANNED", correct : false},]},
+            "Air Jordan 1 Bred",
+            "Air Jordan 1 BANNED", 
+             "Air Jordan 4 Chicago",
+             "Air Jordan 12 BANNED", ],
+            correctAns: "Air Jordan 1 BANNED"
+            },
             
             {question:"Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
       answers: [
-            {text: "Air Jordan 1 Chicago", correct : false},
-            {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 12 Chicago", correct : true},
-            {text: "Air Jordan 1 BANNED", correct : false},]},
+            "Air Jordan 1 Chicago",
+            "Air Jordan 1 BANNED",
+            "Air Jordan 12 ",
+            "Air Jordan 1 BANNED", ],
+            correctAns: "Air Jordan 12"
+      },
           
             {question:"Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
       answers: [
-            {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 10 ", correct : true},
-            {text: "Air Jordan 1 Chicago", correct : false},]},
+            "Air Jordan 1 BANNED",
+            "Air Jordan 1 BANNED",
+            "Air Jordan 10 ", 
+            "Air Jordan 1 Chicago",],
+            correctAns:"Air Jordan 10"
+      },
             
-            {question:"Which of these Jordan currently have the highest retail price ?",
+            {question:"Which of these Jordans currently have the highest retail price ?",
       answers: [
-            {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 1 Chicago", correct : false},
-            {text: "Air Jordan 1 x J.Balvin ", correct : true},
-            {text: "Air Jordan 1 Dior", correct : false},]},
+            "Air Jordan 1 BANNED",
+            "Air Jordan 1 Chicago",
+            "Air Jordan 1 x J.Balvin ",
+            "Air Jordan 1 Dior",],
+            correctAns: "Air Jordan 1 Dior"
+      },
           
 ]
       
       
-
-
-
-
-
-
-
-//Create a function to show the quesitons
-
-// function showQuestion( questions,quizBox){
-
-//       let output = [];
-//       let answers; 
+// Function to create the trivia game and change the questons and answer when the correct answer is selected
+let nextQuestions = 0
+let numb = questions
+let currentQuestion = {}
+function firstQuestion(){
       
-//       for (let i = 0; i <questions.length; i++){
-//             answers = [ ];
-//       }
-//       for( letter in questions[i].answers){
-
-//       }
-
-// }
-
-// Function to create the trivia game and change the inner HTML to show the questions
-
-function startTrivia(){
-      questionName.innerHTML = questions[0].question;
-      btnAns1.innerHTML = questions[0].answers[0].text;
-      btnAns2.innerHTML = questions[0].answers[1].text;
-      btnAns3.innerHTML = questions[0].answers[2].text;
-      btnAns4.innerHTML = questions[0].answers[3].text;
-      
-
-      
-
-     
+      questionName.innerHTML = questions[nextQuestions].question;
+      let choice = questions[nextQuestions].answers
+      btnAns1.innerHTML = choice[0];
+      btnAns2.innerHTML = choice[1];
+      btnAns3.innerHTML = choice[2];
+      btnAns4.innerHTML = choice[3];
+      nextQuestions++ 
+      if(btnAns1.innerHTML = currentQuestion.correctAns ){
             
-      };
-     
-      btnAns1.addEventListener("click",nextQuestion)
-     
-
-startTrivia()
-
-// Create a function to set the next question
-
-function nextQuestion(){
-questionName.innerHTML = questions[1].question 
-btnAns1.innerHTML = questions[1].answers[0].text
-btnAns2.innerHTML = questions[1].answers[1].text;
-btnAns3.innerHTML = questions[1].answers[2].text;
-btnAns4.innerHTML = questions[1].answers[3].text;
-
-} ;
-btnAns2.addEventListener("click",nextQuestion2)
-
-nextQuestion()
-
-
-function nextQuestion2(){
-      questionName.innerHTML = questions[2].question 
-      btnAns1.innerHTML = questions[2].answers[0].text
-      btnAns2.innerHTML = questions[2].answers[1].text;
-      btnAns3.innerHTML = questions[2].answers[2].text;
-      btnAns4.innerHTML = questions[2].answers[3].text;    
+      }
+      
 };
+     
+      btnAns1.addEventListener("click",firstQuestion)
+     
 
-btnAns3.addEventListener("click",nextQuestion3)
+firstQuestion()
 
-nextQuestion2()
+// Create a function that goes through the questions and answers
+
+// function nextQuestion(){
+// questionName.innerHTML = questions[nextQuestions].question
+
+// btnAns1.innerHTML = choice[0];
+// btnAns2.innerHTML = choice[1];
+// btnAns3.innerHTML = choice[2];
+// btnAns4.innerHTML = choice[3];
+// nextQuestions++
+
+// } ;
+// btnAns2.addEventListener("click",nextQuestion)
+
+// nextQuestion()
 
 
-function nextQuestion3(){
+// function thirdQuestion(){
+//       questionName.innerHTML = questions[2].question 
+//       btnAns1.innerHTML = questions[2].answers[0]
+//       btnAns2.innerHTML = questions[2].answers[1]
+//       btnAns3.innerHTML = questions[2].answers[2];
+//       btnAns4.innerHTML = questions[2].answers[3];    
+// };
 
-}
+// btnAns3.addEventListener("click",thirdQuestion)
+
+// thirdQuestion()
+
+
+// function forthQuestion(){
+// questionName.innerHTML = questions[3].question
+// }
 
 
 

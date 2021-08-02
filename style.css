@@ -1,15 +1,26 @@
 body{
       font-family: oxygen;
+      background-image: url();
+      max-width: 100%;
+      max-height: 100%;
 }
 
+h1{
+      text-align: center;
+      background-color: grey;
+
+}
 .qbox{
       display: flex;
       flex-direction: column;
-      background-color: aqua;
-      width: 830px;
-      height: 280px;
+      background-color: grey;
+      color: whitesmoke;
+      width: 500px;
+      height: 100px;
       border-radius: 20px;
       padding: 10px;
+      box-shadow: 10px 10px 10px hotpink;
+      font-size: 24px;
 }
 
 .sclbox{
@@ -17,18 +28,21 @@ body{
       flex-direction: column;
       justify-content: right;
       align-items: flex-end;
-      margin: 50px 50px  50px 0px ;
+      margin: 20px 20px  20px 20px ;
       
 }
 
 .level{
-      margin: 30px 0 0 0;
+      margin: 20px 0 0 0;
 }
 
 .picbox{
       display: flex;
       flex-direction: row;
-      background-color: beige;
+      justify-content: space-between;
+      ;
+      margin-top: 80px;
+      
 }
 
 .img{
@@ -48,4 +62,8 @@ button{
       background-color: blanchedalmond;
       width: 150px;
       height: 150px;
+      border-radius: 15px;
+      margin-right: 50px;
+      margin-left: 50px;
+     
 }
