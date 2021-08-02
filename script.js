@@ -1,7 +1,10 @@
 // Create variables and get them by their id for DOM manipulation
 
+//Create a space to hold and change the question
 let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
+
+//Create buttons for users to select ofor their answer
 let btnAns1 = document.querySelector(".btn")
 let btnAns2= document.querySelector(".btn2")
 let btnAns3 = document.querySelector(".btn3")
@@ -15,17 +18,17 @@ const questions = [
       answers: [
             {text: "Air Jordan 1 Chicago", correct : true},
             {text: "Air Jordan 1 BANNED", correct : false},
-            {text: "Air Jordan 1 Chicago", correct : false},
-            {text: "Air Jordan 1 BANNED", correct : false},]},
+            {text: "Air Jordan 1 Black", correct : false},
+            {text: "Air Jordan 1 UNC", correct : false},]},
       
             {question:"Which Jordan sneaker was banned in the NBA?",
       answers: [
-            {text: "Air Jordan 1 Chicago", correct : false},
+            {text: "Air Jordan 1 Bred", correct : false},
             {text: "Air Jordan 1 BANNED", correct : true},
-            {text: "Air Jordan 1 Chicago", correct : false},
-            {text: "Air Jordan 1 BANNED", correct : false},]},
+            {text: "Air Jordan 4 Chicago", correct : false},
+            {text: "Air Jordan 12 BANNED", correct : false},]},
             
-            {question:"Which Jordan sneaker did MIchael Jordan wear in his famous FLU GAME?",
+            {question:"Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
       answers: [
             {text: "Air Jordan 1 Chicago", correct : false},
             {text: "Air Jordan 1 BANNED", correct : false},
@@ -77,9 +80,9 @@ const questions = [
 function startTrivia(){
       questionName.innerHTML = questions[0].question;
       btnAns1.innerHTML = questions[0].answers[0].text;
-      btnAns2.innerHTML = questions[1].answers[1].text;
-      btnAns3.innerHTML = questions[2].answers[2].text;
-      btnAns4.innerHTML = questions[3].answers[3].text;
+      btnAns2.innerHTML = questions[0].answers[1].text;
+      btnAns3.innerHTML = questions[0].answers[2].text;
+      btnAns4.innerHTML = questions[0].answers[3].text;
       
 
       
@@ -96,30 +99,34 @@ startTrivia()
 // Create a function to set the next question
 
 function nextQuestion(){
-questionName.innerHTML = questions[1].question   
-}  
+questionName.innerHTML = questions[1].question 
+btnAns1.innerHTML = questions[1].answers[0].text
+btnAns2.innerHTML = questions[1].answers[1].text;
+btnAns3.innerHTML = questions[1].answers[2].text;
+btnAns4.innerHTML = questions[1].answers[3].text;
+
+} ;
+btnAns2.addEventListener("click",nextQuestion2)
+
+nextQuestion()
 
 
-// Create a function to select the answer
+function nextQuestion2(){
+      questionName.innerHTML = questions[2].question 
+      btnAns1.innerHTML = questions[2].answers[0].text
+      btnAns2.innerHTML = questions[2].answers[1].text;
+      btnAns3.innerHTML = questions[2].answers[2].text;
+      btnAns4.innerHTML = questions[2].answers[3].text;    
+};
 
-// function selectAnswer(){
+btnAns3.addEventListener("click",nextQuestion3)
 
-// }
+nextQuestion2()
 
 
-// 
+function nextQuestion3(){
 
-// for (i = 0; questions.length;i++){
-
-// }
-
-// images.addEventListener("click",function(){
-
-//       for( i = 0; questions.length;i++){
-//             if
-//       }
-// })
-
+}
 
 
 
