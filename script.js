@@ -2,11 +2,12 @@
 
 let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
-let questAns1 = document.querySelector("#imgbox1")
-let questAns2 = document.querySelector("#imgbox2")
-let questAns3 = document.querySelector("#imgbox3")
-let questAns4 = document.querySelector("#imgbox4")
+let btnAns1 = document.querySelector(".btn")
+let btnAns2= document.querySelector(".btn2")
+let btnAns3 = document.querySelector(".btn3")
+let btnAns4 = document.querySelector(".btn4")
 let currentQuestionIndex
+let button
 // Create an array of questions and answers
 
 const questions = [
@@ -73,23 +74,30 @@ const questions = [
 
 // Function to create the trivia game and change the inner HTML to show the questions
 
-// function startTrivia(){
-//       currentQuestion = 0;
-//       questionName.innerHTML = questions[currentQuestion].question;
-//       questAns1.innerHTML = questions[currentQuestion].answers[0].text;
-//       questAns2.innerHTML = questions[currentQuestion].answers[1].text;
-//       questAns3.innerHTML = questions[currentQuestion].answers[2].text;
-//       questAns4.innerHTML = questions[currentQuestion].answers[3].text;
-     
-// }
+function startTrivia(){
+      questionName.innerHTML = questions[0].question;
+      btnAns1.innerHTML = questions[0].answers[0].text;
+      btnAns2.innerHTML = questions[1].answers[1].text;
+      btnAns3.innerHTML = questions[2].answers[2].text;
+      btnAns4.innerHTML = questions[3].answers[3].text;
+      
 
-// startTrivia()
+      
+
+     
+            
+      };
+     
+      btnAns1.addEventListener("click",nextQuestion)
+     
+
+startTrivia()
 
 // Create a function to set the next question
 
-// function nextQuestion(questions){
-// questionName.innerHTML = question.question;
-// }
+function nextQuestion(){
+questionName.innerHTML = questions[1].question   
+}  
 
 
 // Create a function to select the answer

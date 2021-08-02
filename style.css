@@ -26,7 +26,6 @@ body{
 }
 
 .picbox{
-      margin-top: 50px;
       display: flex;
       flex-direction: row;
       background-color: beige;
@@ -46,7 +45,7 @@ background-color: red;
 }
 
 button{
-      background-image: url(/images/michael-jordan-air-jordan-12-flu-game-5.jpeg);
-      width: 200px;
-      height: 175px;
+      background-color: blanchedalmond;
+      width: 150px;
+      height: 150px;
 }
