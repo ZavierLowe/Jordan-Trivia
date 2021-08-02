@@ -2,7 +2,11 @@
 
 let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
-let questAns = document.querySelectorAll('#imgbox')
+let questAns1 = document.querySelector("#imgbox1")
+let questAns2 = document.querySelector("#imgbox2")
+let questAns3 = document.querySelector("#imgbox3")
+let questAns4 = document.querySelector("#imgbox4")
+let currentQuestionIndex
 // Create an array of questions and answers
 
 const questions = [
@@ -69,13 +73,33 @@ const questions = [
 
 // Function to create the trivia game and change the inner HTML to show the questions
 
-function startTrivia(){
-      currentQuestion = 0;
-      questionName.innerHTML = questions[currentQuestion].question;
-      questAns.innerHTML = questions[currentQuestion].answers[0].option;
-}
+// function startTrivia(){
+//       currentQuestion = 0;
+//       questionName.innerHTML = questions[currentQuestion].question;
+//       questAns1.innerHTML = questions[currentQuestion].answers[0].text;
+//       questAns2.innerHTML = questions[currentQuestion].answers[1].text;
+//       questAns3.innerHTML = questions[currentQuestion].answers[2].text;
+//       questAns4.innerHTML = questions[currentQuestion].answers[3].text;
+     
+// }
 
-startTrivia()
+// startTrivia()
+
+// Create a function to set the next question
+
+// function nextQuestion(questions){
+// questionName.innerHTML = question.question;
+// }
+
+
+// Create a function to select the answer
+
+// function selectAnswer(){
+
+// }
+
+
+// 
 
 // for (i = 0; questions.length;i++){
 
