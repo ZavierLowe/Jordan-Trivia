@@ -48,7 +48,7 @@ let questions = [
             "Air Jordan 1 BANNED",
             "Air Jordan 10 ", 
             "Air Jordan 1 Chicago",],
-            correctAns:"Air Jordan 10"
+            correctAns: "Air Jordan 10"
       },
             
             {question:"Which of these Jordans currently have the highest retail price ?",
@@ -57,7 +57,7 @@ let questions = [
             "Air Jordan 1 Chicago",
             "Air Jordan 1 x J.Balvin ",
             "Air Jordan 1 Dior",],
-            correctAns: "Air Jordan 1 Dior"
+            correctAns: 'Air Jordan 1 Dior'
       },
           
 ]
@@ -66,44 +66,50 @@ let questions = [
 // Function to create the trivia game and change the questons and answer when the correct answer is selected
 
 let numb = questions
-let currentQuestion = {}
-let nextQuestions = 0
+
 function firstQuestion(){
-      
+      let numb = questions
+      let nextQuestions = 1 
       questionName.innerHTML = questions[nextQuestions].question;
       let choice = questions[nextQuestions].answers
       btnAns1.innerHTML = choice[0];
       btnAns2.innerHTML = choice[1];
       btnAns3.innerHTML = choice[2];
       btnAns4.innerHTML = choice[3];
-      let btnNum = 0
-      let buttonAns = numb[nextQuestions].correctAns
-      btns.forEach((btn) =>{ btn.addEventListener('click',function(){
-            if( btns[btnNum].innerHTML == questions[nextQuestions].correctAns){
-                  console.log('correct')
-            }else{
-                  console.log('wrong')
-            }
-      })});
       
+      let buttonAns = numb[nextQuestions].correctAns
+      // btns.forEach(function(element,index){
+      //       element.innerHTML = buttonAns
+      //       element.addEventListener('click',function(){
+      //             if( btns[btnNum] == buttonAns ){
+      //                   console.log('Correct ')
+      //             }else{
+      //                   console.log('Wrong Answer');
+      //             }
+      //       })
+      // })
+      btns.forEach((btns) =>{ btns.addEventListener('click',function(e){
+            if( e.target.innerHTML ==  buttonAns){
+                  btns.addEventListener('click',firstQuestion)
+                  // console.log('Correct')
+            }else{
+                  btns.style.background = "red"
+                  
+            }
+            
+      })});
+     nextQuestions++
 };
      
-
-      // btnAns1.addEventListener("click",firstQuestion)
-     
-//   console.log(btns[btnNum]);    
 firstQuestion()
 
-// function wrongAns(){
-
-      
-// }
 // numb[nextQuestions].correctAns
 // Create a function that goes through the questions and answers
 
 // function nextQuestion(){
+// let nextQuestions = 0   
 // questionName.innerHTML = questions[nextQuestions].question
-
+// let choice = questions[nextQuestions].answers
 // btnAns1.innerHTML = choice[0];
 // btnAns2.innerHTML = choice[1];
 // btnAns3.innerHTML = choice[2];
@@ -111,7 +117,7 @@ firstQuestion()
 // nextQuestions++
 
 // } ;
-// btnAns2.addEventListener("click",nextQuestion)
+
 
 // nextQuestion()
 
