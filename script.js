@@ -4,11 +4,12 @@
 let questionName  = document.querySelector("#question")
 let questnumb = document.querySelector("#questnumb")
 
-//Create buttons for users to select ofor their answer
-let btnAns1 = document.querySelector(".btn")
-let btnAns2= document.querySelector(".btn2")
-let btnAns3 = document.querySelector(".btn3")
-let btnAns4 = document.querySelector(".btn4")
+//Create buttons for users to select for their answer
+let btnAns1 = document.querySelector("#btn1")
+let btnAns2= document.querySelector("#btn2")
+let btnAns3 = document.querySelector("#btn3")
+let btnAns4 = document.querySelector("#btn4")
+let btns = document.querySelectorAll('.button')
 
 // Create an array of questions and answers
 
@@ -63,9 +64,10 @@ let questions = [
       
       
 // Function to create the trivia game and change the questons and answer when the correct answer is selected
-let nextQuestions = 0
+
 let numb = questions
 let currentQuestion = {}
+let nextQuestions = 0
 function firstQuestion(){
       
       questionName.innerHTML = questions[nextQuestions].question;
@@ -74,18 +76,29 @@ function firstQuestion(){
       btnAns2.innerHTML = choice[1];
       btnAns3.innerHTML = choice[2];
       btnAns4.innerHTML = choice[3];
-      nextQuestions++ 
-      if(btnAns1.innerHTML = currentQuestion.correctAns ){
-            
-      }
+      let btnNum = 0
+      let buttonAns = numb[nextQuestions].correctAns
+      btns.forEach((btn) =>{ btn.addEventListener('click',function(){
+            if( btns[btnNum].innerHTML == questions[nextQuestions].correctAns){
+                  console.log('correct')
+            }else{
+                  console.log('wrong')
+            }
+      })});
       
 };
      
-      btnAns1.addEventListener("click",firstQuestion)
-     
 
+      // btnAns1.addEventListener("click",firstQuestion)
+     
+//   console.log(btns[btnNum]);    
 firstQuestion()
 
+// function wrongAns(){
+
+      
+// }
+// numb[nextQuestions].correctAns
 // Create a function that goes through the questions and answers
 
 // function nextQuestion(){
