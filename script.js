@@ -15,6 +15,7 @@ let btns = document.querySelectorAll(".button");
 
 let questions = [
   {
+      questionId : 0,
     question: "Which was the First Air Jordan to debut?",
     answers: [
       "Air Jordan 1 Chicago",
@@ -26,6 +27,7 @@ let questions = [
   },
 
   {
+      questionId : 1,
     question: "Which Jordan sneaker was banned in the NBA?",
     answers: [
       "Air Jordan 1 Bred Toe",
@@ -37,30 +39,33 @@ let questions = [
   },
 
   {
+      questionId : 2,
     question:
       "Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
     answers: [
       "Air Jordan 1 Origin Story",
       "Air Jordan 11 Space Jam",
-      "Air Jordan 12  ",
+      "Air Jordan 12",
       "Air Jordan 11 Bred",
     ],
     correctAns: "Air Jordan 12",
   },
 
   {
+      questionId : 3,
     question:
       "Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
     answers: [
       "Air Jordan 4 Cool Grey",
       "Air Jordan 1 Black Gym Red",
-      "Air Jordan 10 OVO ",
+      "Air Jordan 10 OVO",
       "Air Jordan 12 FIBA",
     ],
-    correctAns: "Air Jordan 10",
+    correctAns: "Air Jordan 10 OVO",
   },
 
   {
+      questionId : 4,
     question:
       "Which of these Jordans currently have the highest retail price ?",
     answers: [
@@ -75,68 +80,76 @@ let questions = [
 
 // Function to create the trivia game and change the questons and answer when the correct answer is selected
 
+let nextQuestions = 0;
 
-
+let choice = questions[nextQuestions].answers;
 function firstQuestion() {
+questionName.innerHTML = questions[nextQuestions].question
   
-  let nextQuestions = 0;
-  let numb=questions
-  questionName.innerHTML = questions[nextQuestions].question
-  let choice = questions[nextQuestions].answers;
   btnAns1.innerHTML = choice[0];
   btnAns2.innerHTML = choice[1];
   btnAns3.innerHTML = choice[2];
   btnAns4.innerHTML = choice[3];
 
-  let buttonAns = numb[nextQuestions].correctAns;
-  btns.forEach((btns) => {
-    btns.addEventListener("click", function (e) {
-      if (e.target.innerHTML === buttonAns) {
-      //   btns.style.background = "green";
-        //update score or increment score
-       
-        nextQuestion();
-      } else {
-        btns.style.background = "red";
-        setTimeout(function(){ 1000});
-        
-      }
-      console.log(questions[nextQuestions].question);
-    });
-  });
+  checkAns();
   
+ 
+ nextQuestions++
 }
-
 firstQuestion();
 
-//Create a funciton that allows for the right answer to go to the next question
-// numb[nextQuestions].correctAns
+
+
+// Create another function that when called it adds the event listener and the inner HTML 
+ // for (nextQuestions; nextQuestions < questions.length; nextQuestions++) 
+ let buttonAns = questions[nextQuestions].correctAns;          
+function nextQuestion() {
+          
+let newQuestion = questions[nextQuestions].question
+      current = questions[nextQuestions].question
+      questionName.innerHTML = newQuestion
+            
+            // Reset game and clear colors
+          let choice = questions[nextQuestions].answers;
+          btnAns1.innerHTML = choice[0];
+          btnAns2.innerHTML = choice[1];
+          btnAns3.innerHTML = choice[2];
+          btnAns4.innerHTML = choice[3];
+          checkAns();
+         nextQuestions++
+          
+      
+          
+        };
+      
+//Create a function that allows for the right answer to go to the next question
 // Create a function that goes through the questions and answers
 
-function nextQuestion() {
-let nextQuestions = 0;
-let current = { }
-  
- for (nextQuestions; nextQuestions < questions.length; nextQuestions++) {
-      
-     current = questions[nextQuestions].question
-      questionName.innerHTML = current
-      
-
-      // console.log(current);
-
-      let choice = questions[nextQuestions].answers
-      // console.log(choice);
-      // Reset game and clear colors
-      
-    btnAns1.innerHTML = choice[0];
-    btnAns2.innerHTML = choice[1];
-    btnAns3.innerHTML = choice[2];
-    btnAns4.innerHTML = choice[3];
-
-  }
- 
+function checkAns(){
+      let buttonAns = questions[nextQuestions].correctAns;
+      btns.forEach((btns) => {
+            btns.addEventListener("click", function (e) {
+              if (e.target.innerHTML === buttonAns) {
+                //update score or increment score
+            nextQuestion();
+              } else {
+            // firstQuestion()
+            console.log('Wrong');
+      }
+              
+            });
+          });
+          
+          console.log(buttonAns);
 }
+
+
+
+// }
+  
+// }
+ 
+// }
 
 // function thirdQuestion(){
 //       questionName.innerHTML = questions[2].question
