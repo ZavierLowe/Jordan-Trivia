@@ -16,7 +16,7 @@ let btns = document.querySelectorAll(".button");
 let questions = [
   {
       questionId : 0,
-    question: "Which was the First Air Jordan to debut?",
+    question: "1. Which was the First Air Jordan to debut?",
     answers: [
       "Air Jordan 1 Chicago",
       "Air Jordan 1 BANNED",
@@ -28,7 +28,7 @@ let questions = [
 
   {
       questionId : 1,
-    question: "Which Jordan sneaker was banned in the NBA?",
+    question: "2. Which Jordan sneaker was banned in the NBA?",
     answers: [
       "Air Jordan 1 Bred Toe",
       "Air Jordan 1 BANNED",
@@ -41,7 +41,7 @@ let questions = [
   {
       questionId : 2,
     question:
-      "Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
+      "3. Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
     answers: [
       "Air Jordan 1 Origin Story",
       "Air Jordan 11 Space Jam",
@@ -54,7 +54,7 @@ let questions = [
   {
       questionId : 3,
     question:
-      "Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
+      "4. Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
     answers: [
       "Air Jordan 4 Cool Grey",
       "Air Jordan 1 Black Gym Red",
@@ -67,7 +67,7 @@ let questions = [
   {
       questionId : 4,
     question:
-      "Which of these Jordans currently have the highest retail price ?",
+      "5. Which of these Jordans currently have the highest retail price ?",
     answers: [
       "Air Jordan 1 x Travis Scott Mocha",
       "Air Jordan 6 Infared",
@@ -132,15 +132,18 @@ function checkAns(){
               if (e.target.innerHTML === buttonAns) {
                 //update score or increment score
             nextQuestion();
+            increaseScore();
+            myPlay();
+            
               } else {
-            // firstQuestion()
-            console.log('Wrong');
+           
+           miss();
       }
               
             });
           });
           
-          console.log(buttonAns);
+          ;
 }
 
 
@@ -151,21 +154,36 @@ function checkAns(){
  
 // }
 
-// function thirdQuestion(){
-//       questionName.innerHTML = questions[2].question
-//       btnAns1.innerHTML = questions[2].answers[0]
-//       btnAns2.innerHTML = questions[2].answers[1]
-//       btnAns3.innerHTML = questions[2].answers[2];
-//       btnAns4.innerHTML = questions[2].answers[3];
-// };
+//Selecting the score class to manipulate the inner HTML 
+const levelScore = document.querySelector(".score")
+levelScore.innerHTML = "SCORE:0"
 
-// btnAns3.addEventListener("click",thirdQuestion)
+//Create a function that increases the score by 23
+let scoreCounter = 0;
 
-// thirdQuestion()
+function increaseScore(){
+      scoreCounter +=23;
+      if( scoreCounter<100){
+            levelScore.innerHTML = `Score: 0${scoreCounter}`
+      }else if (scoreCounter <200){
+            levelScore.innerHTML = `Score: 0${scoreCounter}`
+      }
+}
 
-// function forthQuestion(){
-// questionName.innerHTML = questions[3].question
-// }
+// Creating a function for correct answer to hear a swish sound
+function myPlay(){
+      var audio = new Audio("http://dight310.byu.edu/media/audio/FreeLoops.com/1/1/Basketball%20Net%20Swish-18450-Free-Loops.com.mp3");
+      audio.load()
+      audio.play();
+
+
+};
+// Creating a function for incorrect answer to hear a brick sound
+function miss(){
+      var audio2 = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/Basketball-BackBoard.mp3");
+      audio2.load()
+      audio2.play();
+}
 
 // Have the questions and the answers in an array
 // We need a function to display the question and the answers
