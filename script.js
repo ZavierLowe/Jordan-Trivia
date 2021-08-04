@@ -28,10 +28,10 @@ let questions = [
   {
     question: "Which Jordan sneaker was banned in the NBA?",
     answers: [
-      "Air Jordan 1 Bred",
+      "Air Jordan 1 Bred Toe",
       "Air Jordan 1 BANNED",
-      "Air Jordan 4 Chicago",
-      "Air Jordan 12 BANNED",
+      "Air Jordan 4 Fire Red",
+      "Air Jordan 12 Dark Concord",
     ],
     correctAns: "Air Jordan 1 BANNED",
   },
@@ -40,10 +40,10 @@ let questions = [
     question:
       "Which Jordan sneaker did Michael Jordan wear in his famous FLU GAME?",
     answers: [
-      "Air Jordan 1 Chicago",
-      "Air Jordan 1 BANNED",
-      "Air Jordan 12 ",
-      "Air Jordan 1 BANNED",
+      "Air Jordan 1 Origin Story",
+      "Air Jordan 11 Space Jam",
+      "Air Jordan 12  ",
+      "Air Jordan 11 Bred",
     ],
     correctAns: "Air Jordan 12",
   },
@@ -52,10 +52,10 @@ let questions = [
     question:
       "Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
     answers: [
-      "Air Jordan 1 BANNED",
-      "Air Jordan 1 BANNED",
-      "Air Jordan 10 ",
-      "Air Jordan 1 Chicago",
+      "Air Jordan 4 Cool Grey",
+      "Air Jordan 1 Black Gym Red",
+      "Air Jordan 10 OVO ",
+      "Air Jordan 12 FIBA",
     ],
     correctAns: "Air Jordan 10",
   },
@@ -64,8 +64,8 @@ let questions = [
     question:
       "Which of these Jordans currently have the highest retail price ?",
     answers: [
-      "Air Jordan 1 BANNED",
-      "Air Jordan 1 Chicago",
+      "Air Jordan 1 x Travis Scott Mocha",
+      "Air Jordan 6 Infared",
       "Air Jordan 1 x J.Balvin ",
       "Air Jordan 1 Dior",
     ],
@@ -78,9 +78,10 @@ let questions = [
 
 
 function firstQuestion() {
-  let numb = questions;
+  
   let nextQuestions = 0;
-  questionName.innerHTML = questions[nextQuestions].question;
+  let numb=questions
+  questionName.innerHTML = questions[nextQuestions].question
   let choice = questions[nextQuestions].answers;
   btnAns1.innerHTML = choice[0];
   btnAns2.innerHTML = choice[1];
@@ -93,13 +94,17 @@ function firstQuestion() {
       if (e.target.innerHTML === buttonAns) {
       //   btns.style.background = "green";
         //update score or increment score
+       
         nextQuestion();
       } else {
         btns.style.background = "red";
+        setTimeout(function(){ 1000});
         
       }
+      console.log(questions[nextQuestions].question);
     });
   });
+  
 }
 
 firstQuestion();
@@ -109,23 +114,28 @@ firstQuestion();
 // Create a function that goes through the questions and answers
 
 function nextQuestion() {
-  let nextQuestions = 0;
+let nextQuestions = 0;
+let current = { }
+  
+ for (nextQuestions; nextQuestions < questions.length; nextQuestions++) {
+      
+     current = questions[nextQuestions].question
+      questionName.innerHTML = current
+      
 
-  questionName.innerHTML = questions[nextQuestions].question;
-  for (nextQuestions; nextQuestions < questions.length; nextQuestions++) {
+      // console.log(current);
 
-      let current = questions[nextQuestions].question
-      console.log(current);
       let choice = questions[nextQuestions].answers
       // console.log(choice);
       // Reset game and clear colors
-      questionName.innerHTML = current
+      
     btnAns1.innerHTML = choice[0];
     btnAns2.innerHTML = choice[1];
     btnAns3.innerHTML = choice[2];
     btnAns4.innerHTML = choice[3];
 
   }
+ 
 }
 
 // function thirdQuestion(){
