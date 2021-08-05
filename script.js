@@ -136,7 +136,18 @@ let questions = [
     ],
     correctAns: "Air Jordan 12 Flu Game",
   },
-  
+  {
+      questionId : 9,
+    question:
+      "GAME OVER",
+    answers: [
+      "Thanks",
+      "for",
+      "Playing",
+      "!",
+    ],
+    correctAns: "Air Jordan 12 Flu Game",
+  },
 ];
 
 // Function to create the trivia game and change the questons and answer when the correct answer is selected
