@@ -134,7 +134,7 @@ let questions = [
       "Air Jordan 1 Dior",
       "Air Jordan 12 Retro Twist",
     ],
-    correctAns: "Air Jordan 12 Flu Game",
+    correctAns: "Air Jordan 4 Eminem Carhatt",
   },
   {
       questionId : 9,
