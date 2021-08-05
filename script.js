@@ -54,7 +54,7 @@ let questions = [
   {
       questionId : 3,
     question:
-      "4. Which Jordans were gifted to the artist Drake for his collab with Jordan ?",
+      "4. Which Jordans were gifted to the artist Drake for his collab with Air Jordan ?",
     answers: [
       "Air Jordan 4 Cool Grey",
       "Air Jordan 1 Black Gym Red",
@@ -71,11 +71,72 @@ let questions = [
     answers: [
       "Air Jordan 1 x Travis Scott Mocha",
       "Air Jordan 6 Infared",
-      "Air Jordan 1 x J.Balvin ",
+      "Air Jordan 1 x J.Balvin",
       "Air Jordan 1 Dior",
     ],
     correctAns: "Air Jordan 1 Dior",
   },
+  {
+      questionId : 5,
+    question:
+      "6. Which series of Jordan are the most sought after ?",
+    answers: [
+      "Air Jordan 4",
+      "Air Jordan 2",
+      "Air Jordan 12",
+      "Air Jordan 1",
+    ],
+    correctAns: "Air Jordan 1",
+  },
+  {
+      questionId : 6,
+    question:
+      "7. In what year was the Air Jordan 11 Released?",
+    answers: [
+      "1984",
+      "1990",
+      "1995",
+      "1996",
+    ],
+    correctAns: "1995",
+  },
+  {
+      questionId : 7,
+    question:
+      "8. In what year was the Air Jordan 1 Released?",
+    answers: [
+      "1984",
+      "1990",
+      "1985",
+      "1996",
+    ],
+    correctAns: "1984",
+  },
+  {
+      questionId : 8,
+    question:
+      "9. Which of these Air Jordans was sold for over $100,000?",
+    answers: [
+      "Air Jordan 12 OVO",
+      "Air Jordan 12 Flu Game",
+      "Air Jordan 2 OG",
+      "Air Jordan 11 Blackout",
+    ],
+    correctAns: "Air Jordan 12 Flu Game",
+  },
+  {
+      questionId : 9,
+    question:
+      "10. Which Air Jordans are rarest on this list?",
+    answers: [
+      "Air Jordan 11 Win Like 96",
+      "Air Jordan 4 Eminem Carhatt",
+      "Air Jordan 1 Dior",
+      "Air Jordan 12 Retro Twist",
+    ],
+    correctAns: "Air Jordan 12 Flu Game",
+  },
+  
 ];
 
 // Function to create the trivia game and change the questons and answer when the correct answer is selected
@@ -178,15 +239,11 @@ function myPlay(){
 
 
 };
-// Creating a function for incorrect answer to hear a brick sound
-function miss(){
-      var audio2 = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/Basketball-BackBoard.mp3");
-      audio2.load()
-      audio2.play();
-}
+// Creating a function for incorrect answer to hear a brick sound - Not working as intended
+// function miss(){
+//       var audio2 = new Audio("http://sfxcontent.s3.amazonaws.com/soundfx/Basketball-BackBoard.mp3");
+//       audio2.load()
+//       audio2.play();
+// }
 
-// Have the questions and the answers in an array
-// We need a function to display the question and the answers
-// Put each answer under the pictures so the Javascript can keep track of them
-// Add an event listener on click to proceed to the next question
-// Need to create a function to proceed to the next question
+

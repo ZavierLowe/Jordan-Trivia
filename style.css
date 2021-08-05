@@ -75,6 +75,7 @@ button{
       box-shadow: 6px 6px 6px rgb(222, 222, 222);
       border: violet;
       text-align: center;
+      font-size: 18px;
      
 }
 .button:active{
