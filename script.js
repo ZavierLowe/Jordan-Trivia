@@ -146,7 +146,7 @@ let questions = [
       "Playing",
       "!",
     ],
-    correctAns: "Air Jordan 12 Flu Game",
+    correctAns: "for",
   },
 ];
 
